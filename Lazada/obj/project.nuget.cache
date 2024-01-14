@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "E2Cm9FKXo22jDUHA6UjQA4haTIOYOAhAKgS5vx0GGJNXheFI2X40lD0pAeZtCWwwaM7HCLFI2sRcLhO3gtSw6Q==",
+  "dgSpecHash": "Bv1VqjZqF4m00lb4JF7WmknSLBIkLkWjijnBrmoNMIeGSgdHC64zTMCGSUjMjpbFJUtw8hvtgUu6y0TT9mX/dQ==",
   "success": true,
-  "projectFilePath": "D:\\LazadaProject\\lazada\\Lazada.csproj",
+  "projectFilePath": "D:\\LazadaProject\\Lazada\\Lazada.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\khanh\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\khanh\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\khanh\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
     "C:\\Users\\khanh\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\khanh\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\khanh\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

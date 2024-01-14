@@ -73,3 +73,5 @@ D:\LazadaProject\Lazada\obj\Debug\net8.0\refint\Lazada.dll
 D:\LazadaProject\Lazada\obj\Debug\net8.0\Lazada.pdb
 D:\LazadaProject\Lazada\obj\Debug\net8.0\Lazada.genruntimeconfig.cache
 D:\LazadaProject\Lazada\obj\Debug\net8.0\ref\Lazada.dll
+D:\LazadaProject\lazada\obj\Debug\net8.0\Lazada.sourcelink.json
+D:\LazadaProject\Lazada\bin\Debug\net8.0\libman.json
