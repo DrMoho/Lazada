@@ -1,4 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using Lazada.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+
+builder.Services.AddDbContext<LazadaDbContext>(option =>
+{
+    option.UseSqlServer(
+        builder.Configuration.GetConnectionString("LazadaConnectionString"))
+        .LogTo(Console.WriteLine);
+});
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -15,13 +28,10 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
-
-
-
 app.MapDefaultControllerRoute();
+
+await Data.CreateData(app);
 
 app.Run();

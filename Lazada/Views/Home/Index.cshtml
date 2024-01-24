@@ -1,7 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
 }
 
+@using Lazada.Models
+@model List<Products>
+
 <div class="text-center">
-   
+   <partial name="~/Views/Shared/Components/Products.cshtml" />
 </div>
