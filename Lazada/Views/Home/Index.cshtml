@@ -2,10 +2,10 @@
     ViewData["Title"] = "Home Page";
     Layout = "_Layout";
 }
+<div class="text-center bg-light">
+    <div class="container col-lg-9 ">
+        <partial name="~/Views/Shared/Components/HorizontalBar.cshtml"/>
+        <partial name="~/Views/Shared/Components/Products.cshtml"/>
+    </div>
 
-@using Lazada.Models
-@model List<Products>
-
-<div class="text-center">
-   <partial name="~/Views/Shared/Components/Products.cshtml" />
 </div>

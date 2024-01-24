@@ -38,6 +38,8 @@ public class HomeController : Controller
         
     }
 
+    
+
     // public IActionResult Products()
     // {
     //     var products = _context.Products?.ToList();

@@ -36,6 +36,12 @@ namespace Lazada.Models
                         ProductName = "TV Samsung QLED 4K",
                         Price = 2000.0,
                         OrPrice = 2600.0,
+                    },
+                     new Products
+                    {
+                        ProductName = "Headphone Predator 15X",
+                        Price = 2000.0,
+                        OrPrice = 2600.0,
                     }
                 );
                 await context.SaveChangesAsync();
