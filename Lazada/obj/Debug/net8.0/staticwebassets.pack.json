@@ -13,8 +13,24 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\LazadaProject\\Lazada\\wwwroot\\favicon.ico",
-      "PackagePath": "staticwebassets\\favicon.ico"
+      "Id": "D:\\LazadaProject\\Lazada\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "D:\\LazadaProject\\Lazada\\wwwroot\\img\\car1.jpg",
+      "PackagePath": "staticwebassets\\img\\car1.jpg"
+    },
+    {
+      "Id": "D:\\LazadaProject\\Lazada\\wwwroot\\img\\car2.jpg",
+      "PackagePath": "staticwebassets\\img\\car2.jpg"
+    },
+    {
+      "Id": "D:\\LazadaProject\\Lazada\\wwwroot\\img\\car3.jpg",
+      "PackagePath": "staticwebassets\\img\\car3.jpg"
+    },
+    {
+      "Id": "D:\\LazadaProject\\Lazada\\wwwroot\\img\\car4.jpg",
+      "PackagePath": "staticwebassets\\img\\car4.jpg"
     },
     {
       "Id": "D:\\LazadaProject\\Lazada\\wwwroot\\js\\site.js",

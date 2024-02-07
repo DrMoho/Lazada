@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Lazada.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
+    <link rel="icon" type="image/png" href="~/wwwroot/favicon.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  
 
 </head>
 
@@ -18,7 +20,7 @@
     <header>
         <partial name="~/Views/Shared/Components/Navbar.cshtml" />
     </header>
-    
+
 
     @RenderBody()
     <footer class=" footer ">
@@ -26,6 +28,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+  
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 
