@@ -1,0 +1,115 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 bg-white">
+            <nav class="nav flex-column align-items-start">
+                <a class="nav-link" href="#">Electronic Devices</a>
+                <a class="nav-link" href="#">Electronic Accessories</a>
+                <a class="nav-link" href="#">TV & Home Appliances</a>
+                <a class="nav-link" href="#">Health & Beauty</a>
+                <a class="nav-link" href="#">Babies & Toys</a>
+                <a class="nav-link" href="#">Groceries & Pets</a>
+                <a class="nav-link" href="#">Home & Lifestyle</a>
+                <a class="nav-link" href="#">Women's Fashion & Accessories</a>
+                <a class="nav-link" href="#">Men's Fashion & Accessories</a>
+                <a class="nav-link" href="#">Kid's Fashion & Accessories</a>
+                <a class="nav-link" href="#">Sports & Travel</a>
+                <a class="nav-link" href="#">Automotive & Motorcycles</a>
+            </nav>
+        </div>
+
+        <div class="col-md-9 d-none d-sm-block">
+            <!-- Slider main container -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/car1.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="img/car1.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="img/car1.jpg" alt=""></div>
+                </div>
+                @* <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div> *@
+                <div class="swiper-pagination"></div>
+                <div class="autoplay-progress">
+                    <svg viewBox="0 0 48 48" >
+                        <circle cx="24" cy="24" r="14" ></circle>
+                    </svg>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .nav-link {
+        font-size: small;
+        color: gray;
+    }
+
+    .nav-link:hover {
+        color: orange;
+    }
+
+    .swiper-slide img {
+        height: 60vh;
+        /* Đặt chiều cao của ảnh là 50% chiều cao của viewport */
+        object-fit: cover;
+        /* Đảm bảo ảnh vẫn đẹp khi thu phóng */
+    }
+
+    .autoplay-progress {
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+        z-index: 10;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: var(--swiper-theme-color);
+    }
+
+    .autoplay-progress svg {
+        --progress: 0;
+        position: absolute;
+        left: 0;
+        top: 0px;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        stroke-width: 4px;
+        stroke: var(--swiper-theme-color);
+        fill: none;
+        stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+        stroke-dasharray: 125.6;
+        transform: rotate(-90deg);
+    }
+</style>
+
+<script>
+    const progressCircle = document.querySelector(".autoplay-progress svg");
+    const progressContent = document.querySelector(".autoplay-progress span");
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        },
+        on: {
+            autoplayTimeLeft(s, time, progress) {
+                progressCircle.style.setProperty("--progress", 1 - progress);
+                @* progressContent.textContent = `${Math.ceil(time / 1000)}s`; *@
+            }
+        }
+    });
+</script>
