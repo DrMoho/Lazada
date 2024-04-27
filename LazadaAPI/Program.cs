@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using LazadaApi.Models.Entities;
 using LazadaApi.IRepositories;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IRepository, ProductRepository>();
+//Add authorize identity 
+builder.Services.AddAuthorization();
 
 
 builder.Services.AddDbContext<LazadaApiDbContext>(option =>
@@ -19,6 +22,8 @@ builder.Services.AddDbContext<LazadaApiDbContext>(option =>
         builder.Configuration.GetConnectionString("LazadaConnectionString"))
         .LogTo(Console.WriteLine);
 });
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<LazadaApiDbContext>();
 
 
 var app = builder.Build();

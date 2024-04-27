@@ -68,4 +68,11 @@ public class HomeController : Controller
 
     }
 
+    public IActionResult Login()
+    {
+        // Trả về trang đăng ký
+        return View("~/Areas/Pages/Account/Register.cshtml");
+    }
+
+
 }

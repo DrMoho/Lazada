@@ -10,11 +10,12 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("2c7739ce-84c0-4d04-af09-4822dd3b1e75")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("LazadaAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d288b524a09e60f84c1476a0f1598950911ec49b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b166b230aeb194313c87e4a57775e6f75ce6f12e")]
 [assembly: System.Reflection.AssemblyProductAttribute("LazadaAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LazadaAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

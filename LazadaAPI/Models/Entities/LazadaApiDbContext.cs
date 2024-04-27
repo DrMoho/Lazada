@@ -1,8 +1,10 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace LazadaApi.Models.Entities
 {
-    public class LazadaApiDbContext : DbContext
+    public class LazadaApiDbContext : IdentityDbContext<User>
     {
 
         public LazadaApiDbContext(DbContextOptions<LazadaApiDbContext> options)
@@ -10,6 +12,18 @@ namespace LazadaApi.Models.Entities
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+
+            modelBuilder
+                .Entity<IdentityUserLogin<string>>()
+                .HasKey(l => new { l.LoginProvider, l.ProviderKey });
+
+            // Configure IdentityUserRole as keyless
+            modelBuilder.Entity<IdentityUserRole<string>>()
+                .HasKey(l => new { l.UserId, l.RoleId });
+            modelBuilder.Entity<IdentityUserToken<string>>()
+                .HasKey(l => new { l.UserId, l.LoginProvider, l.Name });
+
             // Ví dụ: Thiết lập khóa chính (Primary Key) cho Product
             modelBuilder.Entity<Product>()
                 .HasKey(p => p.Id);
