@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Lazada",
+    "\\LazadaAPI",
     "\\Lazada\\Controllers",
     "\\Lazada\\Controllers\\Client"
   ],
-  "SelectedNode": "\\Lazada\\Controllers\\Client\\HomeController.cs",
+  "SelectedNode": "\\LazadaAPI\\LazadaAPI.http",
   "PreviewInSolutionExplorer": false
 }

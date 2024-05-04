@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LazadaAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b166b230aeb194313c87e4a57775e6f75ce6f12e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2da77b673aba276546c224c3f236cce8839969ea")]
 [assembly: System.Reflection.AssemblyProductAttribute("LazadaAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LazadaAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

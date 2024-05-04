@@ -3,6 +3,8 @@ using LazadaApi.Models.Entities;
 using LazadaApi.IRepositories;
 using Microsoft.AspNetCore.Identity;
 
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -11,11 +13,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IRepository, ProductRepository>();
-//Add authorize identity 
-builder.Services.AddAuthorization();
+//Sign Repository 
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 
 
+//Sign Dbcontext and Connect string
 builder.Services.AddDbContext<LazadaApiDbContext>(option =>
 {
     option.UseSqlServer(
@@ -23,8 +26,17 @@ builder.Services.AddDbContext<LazadaApiDbContext>(option =>
         .LogTo(Console.WriteLine);
 });
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<LazadaApiDbContext>();
+//Add authorize identity 
 
+// builder.Services.AddDefaultIdentity<User>(options => 
+// options.SignIn.RequireConfirmedAccount = true)
+//     .AddEntityFrameworkStores<LazadaApiDbContext>();
+
+builder.Services.AddIdentity<ApplicationUser , ApplicationRole>()
+.AddEntityFrameworkStores<LazadaApiDbContext>()
+.AddDefaultTokenProviders();
+
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
@@ -38,7 +50,6 @@ if (app.Environment.IsDevelopment())
     });
 
 }
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
@@ -46,7 +57,5 @@ app.MapControllers();
 
 
 await Data.CreateData(app);
-
-
 app.Run();
 

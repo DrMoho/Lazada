@@ -4,16 +4,13 @@ using Microsoft.AspNetCore.Identity;
 
 namespace LazadaApi.Models.Entities
 {
-    public class LazadaApiDbContext : IdentityDbContext<User>
+    public class LazadaApiDbContext : IdentityDbContext
     {
-
         public LazadaApiDbContext(DbContextOptions<LazadaApiDbContext> options)
            : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
-
             modelBuilder
                 .Entity<IdentityUserLogin<string>>()
                 .HasKey(l => new { l.LoginProvider, l.ProviderKey });
@@ -21,8 +18,50 @@ namespace LazadaApi.Models.Entities
             // Configure IdentityUserRole as keyless
             modelBuilder.Entity<IdentityUserRole<string>>()
                 .HasKey(l => new { l.UserId, l.RoleId });
+
             modelBuilder.Entity<IdentityUserToken<string>>()
                 .HasKey(l => new { l.UserId, l.LoginProvider, l.Name });
+
+
+            modelBuilder.Entity<ApplicationUser>(b =>
+                {
+                    // Each User can have many UserClaims
+                    b.HasMany(e => e.Claims)
+                        .WithOne()
+                        .HasForeignKey(uc => uc.UserId)
+                        .IsRequired();
+
+                    // Each User can have many UserLogins
+                    b.HasMany(e => e.Logins)
+                        .WithOne()
+                        .HasForeignKey(ul => ul.UserId)
+                        .IsRequired();
+
+                    // Each User can have many UserTokens
+                    b.HasMany(e => e.Tokens)
+                        .WithOne()
+                        .HasForeignKey(ut => ut.UserId)
+                        .IsRequired();
+                    // Each User can have many entries in the UserRole join table
+                    b.HasMany(e => e.UserRoles)
+                        .WithOne()
+                        .HasForeignKey(ur => ur.UserId)
+                        .IsRequired();
+                });
+
+
+            modelBuilder.Entity<ApplicationRole>()
+                        .HasMany(r => r.RoleClaims)
+                        .WithOne()
+                        .HasForeignKey(rc => rc.RoleId)
+                        .IsRequired();
+
+            modelBuilder.Entity<ApplicationRole>()
+                        .HasMany(r => r.UserRoles)
+                        .WithOne()
+                        .HasForeignKey(rc => rc.RoleId)
+                        .IsRequired();
+
 
             // Ví dụ: Thiết lập khóa chính (Primary Key) cho Product
             modelBuilder.Entity<Product>()
@@ -35,6 +74,7 @@ namespace LazadaApi.Models.Entities
 
             modelBuilder.Entity<ShoppingCart>()
             .HasKey(sc => sc.Id);
+
             modelBuilder.Entity<CartItem>()
            .HasKey(ct => ct.Id);
 
@@ -42,6 +82,7 @@ namespace LazadaApi.Models.Entities
         public DbSet<Product> Products => Set<Product>();
         public DbSet<ShoppingCart> ShoppingCarts => Set<ShoppingCart>();
         public DbSet<CartItem> CartItems => Set<CartItem>();
+
 
     }
 }

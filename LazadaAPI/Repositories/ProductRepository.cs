@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LazadaApi.IRepositories
 {
-    public class ProductRepository : IRepository
+    public class ProductRepository : IProductRepository
     {
         private readonly LazadaApiDbContext _context; // Sử dụng context để truy vấn cơ sở dữ liệu
 
