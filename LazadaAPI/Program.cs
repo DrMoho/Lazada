@@ -2,8 +2,9 @@ using Microsoft.EntityFrameworkCore;
 using LazadaApi.Models.Entities;
 using LazadaApi.IRepositories;
 using Microsoft.AspNetCore.Identity;
-
-
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,15 +29,30 @@ builder.Services.AddDbContext<LazadaApiDbContext>(option =>
 
 //Add authorize identity 
 
-// builder.Services.AddDefaultIdentity<User>(options => 
-// options.SignIn.RequireConfirmedAccount = true)
-//     .AddEntityFrameworkStores<LazadaApiDbContext>();
-
-builder.Services.AddIdentity<ApplicationUser , ApplicationRole>()
+builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
 .AddEntityFrameworkStores<LazadaApiDbContext>()
 .AddDefaultTokenProviders();
 
 builder.Services.AddAuthorization();
+
+//Add Jwt Bearer
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("YourSecretKeyHere123456789@demo!"))
+    };
+});
+
 
 var app = builder.Build();
 

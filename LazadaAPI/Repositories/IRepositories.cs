@@ -2,6 +2,7 @@ using LazadaApi.Models.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using LazadaApi.Models.DTOs;
 
 
 namespace LazadaApi.IRepositories
@@ -16,7 +17,7 @@ namespace LazadaApi.IRepositories
     public interface IAccountRepository
     {
         public Task<IdentityResult> SignUpAsync(SignUp signUp);
-        public Task<string> SignInAsync(SignIn signIn);
+        public Task<(string Message, SignInRepositoryDTO Roles)> SignInAsync(SignIn signIn);
 
 
     }

@@ -71,17 +71,18 @@ namespace LazadaApi.Models.Entities
             modelBuilder.Entity<Product>()
                 .Property(p => p.Name)
                 .IsRequired();
-
-            modelBuilder.Entity<ShoppingCart>()
-            .HasKey(sc => sc.Id);
+            modelBuilder.Entity<Cart>()
+            .HasKey(ct => ct.Id);
 
             modelBuilder.Entity<CartItem>()
-           .HasKey(ct => ct.Id);
+            .HasKey(sc => sc.Id);
+
+
 
         }
         public DbSet<Product> Products => Set<Product>();
-        public DbSet<ShoppingCart> ShoppingCarts => Set<ShoppingCart>();
         public DbSet<CartItem> CartItems => Set<CartItem>();
+        public DbSet<Cart> Carts => Set<Cart>();
 
 
     }

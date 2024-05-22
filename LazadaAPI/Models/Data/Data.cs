@@ -46,6 +46,22 @@ namespace LazadaApi.Models.Entities
                 );
                 await context.SaveChangesAsync();
             }
+            using (var serviceScope = app.ApplicationServices.CreateScope())
+            {
+                var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<ApplicationRole>>();
+
+                // Seed data vào bảng Roles
+                if (!await roleManager.RoleExistsAsync("Admin"))
+                {
+                    await roleManager.CreateAsync(new ApplicationRole {Name = "Admin"});
+                }
+
+                if (!await roleManager.RoleExistsAsync("User"))
+                {
+                    await roleManager.CreateAsync(new ApplicationRole {Name = "User"});
+                }
+            }
+
         }
     }
 }

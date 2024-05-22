@@ -261,3 +261,4 @@ C:\D\Lập trình\ALearn\Học kỳ 6\Báo cáo thực tập\LazadaProject\Lazad
 C:\D\Lập trình\ALearn\Học kỳ 6\Báo cáo thực tập\LazadaProject\LazadaAPI\obj\Debug\net8.0\LazadaAPI.pdb
 C:\D\Lập trình\ALearn\Học kỳ 6\Báo cáo thực tập\LazadaProject\LazadaAPI\obj\Debug\net8.0\LazadaAPI.genruntimeconfig.cache
 C:\D\Lập trình\ALearn\Học kỳ 6\Báo cáo thực tập\LazadaProject\LazadaAPI\obj\Debug\net8.0\ref\LazadaAPI.dll
+C:\D\Lập trình\ALearn\Học kỳ 6\Báo cáo thực tập\LazadaProject\LazadaAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

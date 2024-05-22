@@ -19,8 +19,14 @@
                         <p>Price: @product.Price</p>
                         <p>Original Price: @product.OrPrice</p>
                         <form asp-action="ProductDetails" asp-controller="Home" method="get" enctype="multipart/form-data">
-                            <input name="Id" type="hidden" value="@product.Id" >
+                            <input name="Id" type="hidden" value="@product.Id">
                             <button type="submit" class="btn btn-primary">Go somewhere</button>
+
+                        </form>
+                        <form asp-action="ProductDetails" asp-controller="Home" method="get" enctype="multipart/form-data">
+                            <input name="Id" type="hidden" value="@product.Id">
+                            <button type="submit" class="btn btn-primary">Add to cart</button>
+
                         </form>
 
                     </div>

@@ -7,15 +7,16 @@ namespace LazadaApi.Models.Entities
     {
         [Key]
         public int Id { get; set; }
+        public Cart? Cart { get; set; }
 
-        public ShoppingCart? ShoppingCart { get; set; }
+        [ForeignKey("Cart")]
+        public int CartId { get; set; }
 
-        [ForeignKey("ShoppingCart")]
-        public int ShoppingCartId { get; set; } 
-        
         public Product? Product { get; set; }
 
         [ForeignKey("Product")]
         public int ProductId { get; set; }
+
+
     }
 }

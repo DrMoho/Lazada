@@ -8,6 +8,8 @@ namespace LazadaApi.Models.Entities
         public virtual ICollection<IdentityUserLogin<string>> Logins { get; set; } = null!;
         public virtual ICollection<IdentityUserToken<string>> Tokens { get; set; } = null!;
         public virtual ICollection<IdentityUserRole<string>> UserRoles { get; set; } = null!;
+      
+
 
     }
 

@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\D\\Lập trình\\ALearn\\Học kỳ 6\\Báo cáo thực tập\\LazadaProject\\Lazada\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Lazada.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Lazada.bundle.scp.css"
-    },
-    {
       "Id": "C:\\D\\Lập trình\\ALearn\\Học kỳ 6\\Báo cáo thực tập\\LazadaProject\\Lazada\\wwwroot\\Icon.png",
       "PackagePath": "staticwebassets\\Icon.png"
     },
